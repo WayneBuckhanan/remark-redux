@@ -2,7 +2,7 @@ let intervalEvents = {};
 
 export default class Dom {
   static XMLHttpRequest() {
-    return XMLHttpRequest;
+    return new XMLHttpRequest;
   }
 
   static getHTMLElement() {
