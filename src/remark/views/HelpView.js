@@ -37,6 +37,10 @@ export default class HelpView {
         keys: ['m']
       },
       {
+        description: 'toggleMirroredVertical',
+        keys: ['M']
+      },
+      {
         description: 'toggleFullScreen',
         keys: ['f']
       },

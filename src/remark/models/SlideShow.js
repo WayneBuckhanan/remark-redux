@@ -11,6 +11,7 @@ class SlideShow {
     this.state = {
       blackout: false,
       mirrored: false,
+      mirroredVertical: false,
       pause: false
     };
     this.slides = [];
@@ -41,6 +42,7 @@ class SlideShow {
     this.toggleHelp = this.toggleHelp.bind(this);
     this.toggleBlackout = this.toggleBlackout.bind(this);
     this.toggleMirrored = this.toggleMirrored.bind(this);
+    this.toggleMirroredVertical = this.toggleMirroredVertical.bind(this);
     this.toggleFullScreen = this.toggleFullScreen.bind(this);
     this.createClone = this.createClone.bind(this);
 
@@ -89,7 +91,7 @@ class SlideShow {
   }
 
   setState(state) {
-    let modes = ['mirrored', 'blackout', 'pause'];
+    let modes = ['mirroredVertical', 'mirrored', 'blackout', 'pause'];
 
     modes.forEach((mode) => {
       if (state.hasOwnProperty(mode)) {
@@ -292,6 +294,10 @@ class SlideShow {
 
   toggleMirrored() {
     this.events.emit('toggleMirrored');
+  }
+
+  toggleMirroredVertical() {
+    this.events.emit('toggleMirroredVertical');
   }
 
   toggleFullScreen() {

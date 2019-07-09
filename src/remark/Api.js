@@ -89,7 +89,8 @@ export default class Api {
                   enter: 'Return'
                 },
                 toggleBlackout: 'Toggle blackout',
-                toggleMirrored: 'Toggle mirrored',
+                toggleMirrored: 'Toggle horizonal mirroring',
+                toggleMirroredVertical: 'Toggle vertical mirroring',
                 toggleFullScreen: 'Toggle full screen',
                 togglePresenterMode: 'Toggle presenter mode',
                 restartPresentationTimer: 'Restart the presentation timer',

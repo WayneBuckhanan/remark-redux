@@ -134,6 +134,11 @@ describe('DefaultController', () => {
       events.emit.should.be.calledWithExactly('toggleMirrored');
     });
 
+    it('should toggle mirroredVertical mode when pressing "M"', () => {
+      events.emit('keydown', {keyCode: 77, shiftKey: true});
+      events.emit.should.be.calledWithExactly('toggleMirroredVertical');
+    });
+
     beforeEach(() => {
       createController();
     });

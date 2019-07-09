@@ -107,6 +107,10 @@ export default class SlideShowView {
       changeMode('mirrored', newState);
     });
 
+    this.events.on('toggleMirroredVertical', (newState) => {
+      changeMode('mirroredVertical', newState);
+    });
+
 
     this.events.on('hideOverlay', () => {
       changeMode('blackout', false);

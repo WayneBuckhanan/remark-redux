@@ -78,6 +78,13 @@ export default class Keyboard {
             this.goToSlideNumber = '';
           }
           break;
+        case 77: // KeyM
+          if (event.shiftKey) { // Shift+KeyM
+            this.events.emit('toggleMirroredVertical');
+          } else {
+            this.events.emit('toggleMirrored');
+          }
+          break;
       }
     });
 
@@ -93,8 +100,8 @@ export default class Keyboard {
         case 'b':
           this.events.emit('toggleBlackout');
           break;
-        case 'm':
-          this.events.emit('toggleMirrored');
+//        case 'm':
+//          this.events.emit('toggleMirrored');
           break;
         case 'c':
           this.events.emit('createClone');

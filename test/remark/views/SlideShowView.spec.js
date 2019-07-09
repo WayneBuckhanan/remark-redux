@@ -237,11 +237,24 @@ describe('SlideShowView', () => {
       hasClass(containerElement, 'remark-container--mirrored-mode').should.equal(true);
     });
 
+    it('should toggle mirroredVertical on event', () => {
+      events.emit('toggleMirroredVertical');
+
+      hasClass(containerElement, 'remark-container--mirroredVertical-mode').should.equal(true);
+    });
+
     it('should leave toggle mirrored on event', () => {
       addClass(containerElement, 'remark-container--mirrored-mode');
       events.emit('toggleMirrored');
 
       hasClass(containerElement, 'remark-container--mirrored-mode').should.equal(false);
+    });
+
+    it('should leave toggle mirroredVertical on event', () => {
+      addClass(containerElement, 'remark-container--mirroredVertical-mode');
+      events.emit('toggleMirroredVertical');
+
+      hasClass(containerElement, 'remark-container--mirroredVertical-mode').should.equal(false);
     });
   });
 
