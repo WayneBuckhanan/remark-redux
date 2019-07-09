@@ -18,7 +18,7 @@ import Lexer from './Lexer';
  *      links: {
  *        id: { href: 'url', title: 'optional title' },
  *        ...
- *      ],
+ *      },
  *      content: [
  *        // Any content except for content classes are represented as strings
  *        'plain text ',
@@ -219,6 +219,7 @@ export default class Parser {
           break;
         case 'column_separator':
           if (stack.length === 1) {
+	    stack[0].content[0] = Parser.extractProperties(stack[0].content[0], stack[0].properties || {}); // make sure the properties (like class!) get extracted and applied to the slide, not rendered as content in the column
             let currentContent = stack[0].content;
             stack[0].content = [];
 
